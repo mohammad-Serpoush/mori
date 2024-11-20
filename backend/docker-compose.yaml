@@ -1,0 +1,12 @@
+services:
+  api:
+    container_name: "backend-api"
+    build:
+      context: .
+    image: "backend-app"
+    volumes:
+      - .:.
+    command: /app/runserver.sh
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
